@@ -6,7 +6,9 @@ exports.getAddProduct = (req, res, next) => {
       path: '/admin/add-product',
       formsCSS: true,
       productCSS: true,
-      activeAddProduct: true
+      activeAddProduct: true, 
+      editing: false,
+
     });
   };
   
@@ -16,15 +18,23 @@ exports.getAddProduct = (req, res, next) => {
     const imageUrl = req.body.imageUrl;
     const description = req.body.description;
     const price = req.body.price; 
+    Product.create({
+      title:title, 
+      price: price, 
+      imageUrl: imageUrl, 
+      description: description, 
 
-    const product = new Product(title, imageUrl, description, price); 
-    product.save();  
-    res.redirect('/');
+    })
+    .then((result) => {
+      console.log(result); 
+    })
+    .catch();
+    
   };
 
 
   exports.getProducts = (req,res,next) => {
-    Product.fetchAll((products) => {
+    Product.findAll().then((products) => {
 
         res.render('admin/products', {
           prods: products,
@@ -33,6 +43,32 @@ exports.getAddProduct = (req, res, next) => {
          
         });
     
-      }); 
+      }).catch(); 
     
+  }
+
+
+  exports.getEditProduct = (req, res , next ) => {
+    const editMode= req.query.edit; 
+    if(!editMode){
+      res.redirect('/');
+    }
+    const prodId = req.params.productId; 
+    Product.findByPk(prodId).then(
+      product => {
+        if(!product){
+          res.redirect('/'); 
+        }
+
+        res.render('admin/edit-product', {
+          product:product, 
+          editing: editMode,
+          path: '/admin/edit-product', 
+          pageTitle: 'Edit Product', 
+
+        })
+      }
+    ).catch(err =>{
+      console.log(err); 
+    });
   }
