@@ -3,25 +3,25 @@
 - This is a product store using Expressjs as a backend. The master branch will display the newest version of the project. For different versions of the projects (static storage, Mysql as a database, MongoDB as a database, for example), please refer to the correct branch of that version. 
 
 
-#List of update dates of the project.
+# List of update dates of the project.
 - As of June 15th, the static models is updated. 
 
-#Frontend 
+# Frontend 
 - HTML
 - CSS
 - Javscript
 - EJS Engine
 
-#Backend 
+# Backend 
 - Express.js
 
-#Databse
+# Databse
 With different version, the project will be implemented using different databases, the list contains: 
 - Static Storage 
 - MySQL 
 
 
-#Cloning
+# Cloning
 To clone the project, go to Desktop on your computer, then run the following commands: 
 
 1. mkdir project 
