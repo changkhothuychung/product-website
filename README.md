@@ -1,6 +1,7 @@
 # product-website
 
 - This is a product store using Expressjs as a backend. The master branch will display the newest version of the project. For different versions of the projects (static storage, Mysql as a database, MongoDB as a database, for example), please refer to the correct branch of that version. 
+- The store contains two parts - one part being maintained by the admin and the other available to the user. The admin can input the available items of the store, edit the information of an item or delete one from the store. The user can view the available products, add one or multiple items to the cart, then checkout with the total price. 
 
 
 # List of update dates of the project.
