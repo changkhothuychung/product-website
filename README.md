@@ -4,8 +4,6 @@
 - The store contains two parts - one part being maintained by the admin and the other available to the user. The admin can input the available items of the store, edit the information of an item or delete one from the store. The user can view the available products, add one or multiple items to the cart, then checkout with the total price. 
 
 
-# List of update dates of the project.
-- As of June 15th, the static models is updated. 
 
 # Frontend 
 - HTML
